@@ -5,7 +5,7 @@ const App = () => {
 	return (
 		<div>
 			<NavContextProvider>
-					<Nav />
+				<Nav />
 			</NavContextProvider>
 		</div>
 	);

@@ -1,9 +1,6 @@
-import { IconProps } from '../../types/types';
-
-const IconClose: React.FC<IconProps> = ({ className }) => {
+const IconClose = () => {
 	return (
 		<svg
-			className={className}
 			width='14'
 			height='15'
 			xmlns='http://www.w3.org/2000/svg'

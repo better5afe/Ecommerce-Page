@@ -8,3 +8,23 @@ input {
 	font-family: 'Kumbh Sans', sans-serif;
 	font-size: 16px;
 }
+
+button,
+a {
+	outline: none;
+}
+
+.open-nav svg path,
+.close-nav svg path,
+.cart-btn svg path {
+	transition: fill 0.3s;
+}
+
+.open-nav:hover svg path,
+.open-nav:focus svg path,
+.close-nav:hover svg path,
+.close-nav:focus svg-path,
+.cart-btn:hover svg path,
+.cart-btn:focus svg-path.cart-btn {
+	fill: black;
+}

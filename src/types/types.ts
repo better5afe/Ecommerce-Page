@@ -2,9 +2,9 @@
 
 export interface NavContextProps {
 	isNavOpen: boolean;
-	toggleNav: () => void;
+	openNav: () => void;
 	closeNav: () => void;
-	isCartOpen: boolean,
+	isCartOpen: boolean;
 	toggleCart: () => void;
 	closeCart: () => void;
 }
@@ -17,4 +17,15 @@ export interface ProviderProps {
 
 export interface IconProps {
 	className: string;
+}
+
+export interface BackdropProps {
+	className: string;
+	onClick: () => void;
+}
+
+// Nav
+
+export interface NavLinkProps {
+	text: string;
 }

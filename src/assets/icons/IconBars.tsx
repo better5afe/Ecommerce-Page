@@ -1,9 +1,6 @@
-import { IconProps } from '../../types/types';
-
-const IconBars: React.FC<IconProps> = ({ className }) => {
+const IconBars= () => {
 	return (
 		<svg
-			className={className}
 			width='16'
 			height='15'
 			xmlns='http://www.w3.org/2000/svg'

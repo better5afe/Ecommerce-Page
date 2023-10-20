@@ -6,10 +6,8 @@ export const NavContextProvider: React.FC<ProviderProps> = ({ children }) => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
 
-	const toggleNavHandler = () => {
-		setIsNavOpen((prevState) => {
-			return !prevState;
-		});
+	const openNavHandler = () => {
+		setIsNavOpen(true);
 	};
 
 	const closeNavHandler = () => {
@@ -30,11 +28,11 @@ export const NavContextProvider: React.FC<ProviderProps> = ({ children }) => {
 		<NavContext.Provider
 			value={{
 				isNavOpen: isNavOpen,
-				toggleNav: toggleNavHandler,
+				openNav: openNavHandler,
 				closeNav: closeNavHandler,
 				isCartOpen: isCartOpen,
 				toggleCart: toggleCartHandler,
-				closeCart: closeCartHandler
+				closeCart: closeCartHandler,
 			}}
 		>
 			{children}

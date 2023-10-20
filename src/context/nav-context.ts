@@ -3,7 +3,7 @@ import { NavContextProps } from '../types/types';
 
 export const NavContext = React.createContext<NavContextProps>({
 	isNavOpen: false,
-	toggleNav: () => {},
+	openNav: () => {},
 	closeNav: () => {},
 	isCartOpen: false,
 	toggleCart: () => {},
