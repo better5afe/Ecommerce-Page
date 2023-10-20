@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { CartContext } from '../../../../context/cart-context';
+import { NavContext } from '../../../../context/nav-context';
 import IconCart from '../../../../assets/icons/IconCart';
 
 const CartBtn = () => {
-	const cartCtx = useContext(CartContext);
+	const navCtx = useContext(NavContext);
 
 	return (
-		<button onClick={cartCtx.toggleCart}>
+		<button onClick={navCtx.toggleCart}>
 			<IconCart />
 		</button>
 	);

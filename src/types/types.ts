@@ -1,19 +1,16 @@
 // Context
 
 export interface NavContextProps {
-	isOpen: boolean;
+	isNavOpen: boolean;
 	toggleNav: () => void;
 	closeNav: () => void;
+	isCartOpen: boolean,
+	toggleCart: () => void;
+	closeCart: () => void;
 }
 
 export interface ProviderProps {
 	children: React.ReactNode;
-}
-
-export interface CartContextProps {
-	isOpen: boolean;
-	toggleCart: () => void;
-	closeCart: () => void;
 }
 
 // General Components

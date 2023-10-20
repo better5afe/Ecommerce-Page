@@ -4,6 +4,7 @@ import { ProviderProps } from '../types/types';
 
 export const NavContextProvider: React.FC<ProviderProps> = ({ children }) => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [isCartOpen, setIsCartOpen] = useState(false);
 
 	const toggleNavHandler = () => {
 		setIsNavOpen((prevState) => {
@@ -15,12 +16,25 @@ export const NavContextProvider: React.FC<ProviderProps> = ({ children }) => {
 		setIsNavOpen(false);
 	};
 
+	const toggleCartHandler = () => {
+		setIsCartOpen((prevState) => {
+			return !prevState;
+		});
+	};
+
+	const closeCartHandler = () => {
+		setIsCartOpen(false);
+	};
+
 	return (
 		<NavContext.Provider
 			value={{
-				isOpen: isNavOpen,
+				isNavOpen: isNavOpen,
 				toggleNav: toggleNavHandler,
 				closeNav: closeNavHandler,
+				isCartOpen: isCartOpen,
+				toggleCart: toggleCartHandler,
+				closeCart: closeCartHandler
 			}}
 		>
 			{children}

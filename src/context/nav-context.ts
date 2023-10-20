@@ -2,7 +2,10 @@ import React from 'react';
 import { NavContextProps } from '../types/types';
 
 export const NavContext = React.createContext<NavContextProps>({
-	isOpen: false,
+	isNavOpen: false,
 	toggleNav: () => {},
 	closeNav: () => {},
+	isCartOpen: false,
+	toggleCart: () => {},
+	closeCart: () => {},
 });
