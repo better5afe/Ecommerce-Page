@@ -1,5 +1,11 @@
+import Logo from '../../../assets/icons/Logo';
+
 const NavLogo = () => {
-	return <a></a>;
+	return (
+		<a href='#'>
+			<Logo />
+		</a>
+	);
 };
 
 export default NavLogo;
