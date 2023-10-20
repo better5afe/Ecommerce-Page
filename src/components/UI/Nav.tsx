@@ -5,6 +5,7 @@ import NavLogo from '../subcomponents/nav-components/NavLogo';
 import NavLinks from '../subcomponents/nav-components/NavLinks';
 import CartBtn from '../subcomponents/nav-components/cart/CartBtn';
 import NavUser from '../subcomponents/nav-components/NavUser';
+import CartList from '../subcomponents/nav-components/cart/CartList';
 import Backdrop from '../reusable/Backdrop';
 
 const Nav = () => {
@@ -12,16 +13,17 @@ const Nav = () => {
 
 	return (
 		<div className='container sticky top-0 mx-auto'>
-			<nav className='flex items-center justify-between p-4 lg:py-6 border-b'>
+			<nav className='relative flex items-center justify-between p-4 lg:py-6 lg:border-b'>
 				<div className='flex items-end'>
 					<NavOpenBtn />
 					<NavLogo />
-				<NavLinks />
+					<NavLinks />
 				</div>
 				<div className='flex items-center justify-between'>
 					<CartBtn />
 					<NavUser />
 				</div>
+				<CartList />
 			</nav>
 			<Backdrop
 				className={navCtx.isNavOpen ? 'opacity-70 z-20' : ''}

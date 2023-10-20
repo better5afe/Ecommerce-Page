@@ -29,3 +29,13 @@ export interface BackdropProps {
 export interface NavLinkProps {
 	text: string;
 }
+
+// Cart
+
+export interface CartListItemProps {
+	id: number;
+	name: string;
+	thumbnail: unknown;
+	price: number;
+	amount: number;
+}
