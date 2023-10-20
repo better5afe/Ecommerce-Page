@@ -12,12 +12,12 @@ const Nav = () => {
 
 	return (
 		<div className='container sticky top-0 mx-auto'>
-			<nav className='flex items-center justify-between p-4'>
+			<nav className='flex items-center justify-between p-4 lg:py-6 border-b'>
 				<div className='flex items-end'>
 					<NavOpenBtn />
 					<NavLogo />
-				</div>
 				<NavLinks />
+				</div>
 				<div className='flex items-center justify-between'>
 					<CartBtn />
 					<NavUser />

@@ -23,8 +23,27 @@ a {
 .open-nav:hover svg path,
 .open-nav:focus svg path,
 .close-nav:hover svg path,
-.close-nav:focus svg-path,
+.close-nav:focus svg path,
 .cart-btn:hover svg path,
-.cart-btn:focus svg-path.cart-btn {
+.cart-btn:focus svg path {
 	fill: black;
+}
+
+@media (min-width: 992px) {
+	.nav-link::before {
+		position: absolute;
+		bottom: -32px;
+		height: 3px;
+		width: 100%;
+		background: hsl(26, 100%, 55%);
+		transform: scaleX(0);
+		transform-origin: center;
+		content: '';
+		transition: transform 0.3s;
+	}
+
+	.nav-link:hover::before,
+	.nav-link:focus::before {
+		transform: scaleX(1);
+	}
 }

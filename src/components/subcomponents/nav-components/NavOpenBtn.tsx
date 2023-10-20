@@ -6,7 +6,10 @@ const NavOpenBtn = () => {
 	const navCtx = useContext(NavContext);
 
 	return (
-		<button onClick={navCtx.openNav} className='open-nav me-4 outline-none'>
+		<button
+			onClick={navCtx.openNav}
+			className='open-nav me-4 outline-none lg:hidden'
+		>
 			<IconBars />
 		</button>
 	);

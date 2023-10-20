@@ -3,11 +3,11 @@ import { NavContextProvider } from './context/NavContextProvider';
 
 const App = () => {
 	return (
-		<div>
+		<>
 			<NavContextProvider>
 				<Nav />
 			</NavContextProvider>
-		</div>
+		</>
 	);
 };
 
