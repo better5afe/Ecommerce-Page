@@ -41,7 +41,7 @@ export interface NavLinkProps {
 export interface CartListItemProps {
 	id: number;
 	name: string;
-	thumbnail: unknown;
+	thumbnail: string;
 	price: number;
 	amount: number;
 }

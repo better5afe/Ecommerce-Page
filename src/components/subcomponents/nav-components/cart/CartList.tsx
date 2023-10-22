@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { NavContext } from '../../../../context/nav-context';
 import CartListItem from './CartListItem';
 import Button from '../../../reusable/Button';
 
@@ -8,17 +10,22 @@ const dummyItems = [
 		id: 1,
 		name: 'Fall Limited Edition Sneakers',
 		thumbnail: CartItemThumbnail,
-		price: 125.0,
+		price: 125,
 		amount: 3,
 	},
 ];
 
 const CartList = () => {
+	const navCtx = useContext(NavContext);
+
 	return (
-		<ul className='absolute top-[70px] left-4 right-4 rounded-md lg:top-[85px] lg:left-[65%] lg:right-0 xl:left-[70%] bg-red-200'>
+		<ul
+			id='cart'
+			className='cart absolute top-[70px] left-4 right-4 bg-white rounded-md shadow-lg shadow-grayishBlue lg:top-[80px] lg:left-[65%] lg:right-0 xl:left-[70%]'
+		>
 			<p
 				className={`p-4 text-sm font-bold ${
-					dummyItems.length === 0 && 'border-b'
+					dummyItems.length > 0 && 'border-b'
 				}`}
 			>
 				Cart
@@ -28,7 +35,7 @@ const CartList = () => {
 					Your cart is empty
 				</p>
 			) : (
-				<div className='mx-4'>
+				<div className='m-4 mb-6'>
 					{dummyItems.map((dummyItem, index) => (
 						<CartListItem
 							key={index}
@@ -41,7 +48,7 @@ const CartList = () => {
 					))}
 					<Button
 						onClick={() => {
-							console.log('test');
+							console.log('checkout');
 						}}
 						className='w-full'
 						text='Checkout'

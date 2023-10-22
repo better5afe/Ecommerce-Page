@@ -7,8 +7,12 @@ const CartBtn = () => {
 	const navCtx = useContext(NavContext);
 
 	return (
-		<button onClick={navCtx.toggleCart} className='cart-btn relative'>
-			<IconCart />
+		<button
+			id='cart-btn'
+			onClick={navCtx.toggleCart}
+			className='cart-btn relative'
+		>
+			<IconCart className='pointer-events-none' />
 			<CartBadge />
 		</button>
 	);

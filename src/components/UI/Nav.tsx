@@ -12,7 +12,16 @@ const Nav = () => {
 	const navCtx = useContext(NavContext);
 
 	return (
-		<div className='container sticky top-0 mx-auto'>
+		<div
+			className='container sticky top-0 mx-auto'
+			onClick={(e) => {
+				if ((e.target as HTMLElement).id === 'cart-btn') {
+					return;
+				} else {
+					navCtx.closeCart();
+				}
+			}}
+		>
 			<nav className='relative flex items-center justify-between p-4 lg:py-6 lg:border-b'>
 				<div className='flex items-end'>
 					<NavOpenBtn />
@@ -23,10 +32,10 @@ const Nav = () => {
 					<CartBtn />
 					<NavUser />
 				</div>
-				<CartList />
+				{navCtx.isCartOpen && <CartList />}
 			</nav>
 			<Backdrop
-				className={navCtx.isNavOpen ? 'opacity-70 z-20' : ''}
+				className={navCtx.isNavOpen ? 'block' : ''}
 				onClick={navCtx.closeNav}
 			/>
 		</div>

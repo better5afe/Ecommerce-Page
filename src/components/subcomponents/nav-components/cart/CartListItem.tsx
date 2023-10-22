@@ -1,4 +1,5 @@
 import { CartListItemProps } from '../../../../types/types';
+import IconTrash from '../../../../assets/icons/IconTrash';
 
 const CartListItem: React.FC<CartListItemProps> = ({
 	id,
@@ -7,9 +8,31 @@ const CartListItem: React.FC<CartListItemProps> = ({
 	price,
 	amount,
 }) => {
-	return <li>
-		
-	</li>;
+	let totalAmount = (price * amount).toFixed(2);
+
+	return (
+		<li className='flex items-center justify-between mb-6 text-sm'>
+			<div className='flex items-center'>
+				<img
+					src={thumbnail}
+					alt='Pictrue of the product.'
+					className='w-12 h-12 rounded-md'
+				/>
+				<div className='flex flex-col ms-4 text-darkGrayishBlue'>
+					<p className='lg:mb-1'>{name}</p>
+					<div className='flex'>
+						<p>
+							${price.toFixed(2)} x {amount}&nbsp;
+						</p>
+						<p className='font-bold text-black'>${totalAmount}</p>
+					</div>
+				</div>
+			</div>
+			<button className='delete-btn outline-none'>
+				<IconTrash />
+			</button>
+		</li>
+	);
 };
 
 export default CartListItem;
