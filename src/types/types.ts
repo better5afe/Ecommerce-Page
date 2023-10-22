@@ -30,6 +30,12 @@ export interface ButtonProps {
 	onClick: () => void;
 }
 
+export interface CarouselBtnProps {
+	id: string;
+	className: string;
+	onClick: () => void;
+}
+
 // Nav
 
 export interface NavLinkProps {
@@ -44,4 +50,13 @@ export interface CartListItemProps {
 	thumbnail: string;
 	price: number;
 	amount: number;
+}
+
+// Main
+
+// Mobile Carousel
+
+export interface MobileCarouselSlideProps {
+	id: string;
+	className: string;
 }

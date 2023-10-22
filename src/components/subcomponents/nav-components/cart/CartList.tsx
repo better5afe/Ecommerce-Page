@@ -21,7 +21,7 @@ const CartList = () => {
 	return (
 		<ul
 			id='cart'
-			className='cart absolute top-[70px] left-4 right-4 bg-white rounded-md shadow-lg shadow-grayishBlue lg:top-[80px] lg:left-[65%] lg:right-0 xl:left-[70%]'
+			className='cart absolute top-[70px] left-4 right-4 bg-white rounded-md shadow-lg shadow-grayishBlue lg:top-[80px] lg:left-[65%] lg:right-0 xl:left-[70%] z-20'
 		>
 			<p
 				className={`p-4 text-sm font-bold ${
@@ -48,7 +48,7 @@ const CartList = () => {
 					))}
 					<Button
 						onClick={() => {
-							console.log('checkout');
+							navCtx.closeCart();
 						}}
 						className='w-full'
 						text='Checkout'

@@ -13,7 +13,7 @@ const Nav = () => {
 
 	return (
 		<div
-			className='container sticky top-0 mx-auto'
+			className='container sticky top-0 mx-auto bg-white z-30 lg:static'
 			onClick={(e) => {
 				if ((e.target as HTMLElement).id === 'cart-btn') {
 					return;

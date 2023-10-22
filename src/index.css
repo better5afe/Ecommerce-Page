@@ -32,6 +32,15 @@ a {
 	fill: black;
 }
 
+.carousel-btn svg path {
+	transition: stroke 0.3s;
+}
+
+.carousel-btn:hover svg path,
+.carousel-btn:focus svg path {
+	stroke: hsl(26, 100%, 55%);
+}
+
 .button {
 	transition: box-shadow 0.3s;
 }
