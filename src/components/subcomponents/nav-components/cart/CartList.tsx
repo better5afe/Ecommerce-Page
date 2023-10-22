@@ -1,4 +1,6 @@
 import CartListItem from './CartListItem';
+import Button from '../../../reusable/Button';
+
 const CartItemThumbnail = require('../../../../assets/images/image-product-1-thumbnail.jpg');
 
 const dummyItems = [
@@ -26,9 +28,10 @@ const CartList = () => {
 					Your cart is empty
 				</p>
 			) : (
-				<>
-					{dummyItems.map((dummyItem) => (
+				<div className='mx-4'>
+					{dummyItems.map((dummyItem, index) => (
 						<CartListItem
+							key={index}
 							id={dummyItem.id}
 							name={dummyItem.name}
 							thumbnail={dummyItem.thumbnail}
@@ -36,7 +39,14 @@ const CartList = () => {
 							amount={dummyItem.amount}
 						/>
 					))}
-				</>
+					<Button
+						onClick={() => {
+							console.log('test');
+						}}
+						className='w-full'
+						text='Checkout'
+					/>
+				</div>
 			)}
 		</ul>
 	);

@@ -24,6 +24,12 @@ export interface BackdropProps {
 	onClick: () => void;
 }
 
+export interface ButtonProps {
+	text: string;
+	className?: string;
+	onClick: () => void;
+}
+
 // Nav
 
 export interface NavLinkProps {

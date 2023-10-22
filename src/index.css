@@ -29,6 +29,15 @@ a {
 	fill: black;
 }
 
+.button {
+	transition: box-shadow 0.3s;
+}
+
+.button:hover,
+.button:focus {
+	box-shadow: 4px 5px 54px -8px hsl(26, 100%, 55%);
+}
+
 @media (min-width: 992px) {
 	.nav-link::before {
 		position: absolute;
