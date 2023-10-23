@@ -7,7 +7,7 @@ const ProductControls = () => {
 			<ProductAmount />
 			<Button
 				id='product-control'
-				className='product-control flex items-center jusity-between'
+				className='product-control flex items-center justify-center w-full'
 				text={'Add to cart'}
 				onClick={() => {
 					console.log('add to cart');
