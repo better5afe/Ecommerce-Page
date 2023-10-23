@@ -41,6 +41,10 @@ a {
 	stroke: hsl(26, 100%, 55%);
 }
 
+.product-btn path {
+	fill: white;
+}
+
 .second-slide {
 	transform: translateX(-100%);
 }
@@ -74,5 +78,9 @@ a {
 	.nav-link:hover::before,
 	.nav-link:focus::before {
 		transform: scaleX(1);
+	}
+
+	.mobile-carousel {
+		display: none;
 	}
 }

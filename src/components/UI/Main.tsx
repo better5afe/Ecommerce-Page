@@ -1,18 +1,20 @@
 import { useContext } from 'react';
 import { NavContext } from '../../context/nav-context';
-import MobileCarousel from '../subcomponents/main-components/MobileCarousel';
+import Carousel from '../subcomponents/main-components/Carousel';
+import MainDescription from '../subcomponents/main-components/MainDescription';
 
 const Main = () => {
 	const navCtx = useContext(NavContext);
 
 	return (
-		<div className='container mx-auto'>
+		<div className='container w-screen lg:w-[992px] lg:mx-auto'>
 			<main
 				onClick={() => {
 					navCtx.closeCart();
 				}}
 			>
-				<MobileCarousel />
+				<Carousel className='mobile-carousel' />
+				<MainDescription />
 			</main>
 		</div>
 	);

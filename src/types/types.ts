@@ -25,7 +25,8 @@ export interface BackdropProps {
 }
 
 export interface ButtonProps {
-	text: string;
+	id?: string;
+	text: string | any;
 	className?: string;
 	onClick: () => void;
 }
@@ -54,9 +55,8 @@ export interface CartListItemProps {
 
 // Main
 
-// Mobile Carousel
+// Carousel
 
-export interface MobileCarouselSlideProps {
-	id: string;
+export interface CarouselProps {
 	className: string;
 }
