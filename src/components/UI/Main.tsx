@@ -6,13 +6,15 @@ const Main = () => {
 	const navCtx = useContext(NavContext);
 
 	return (
-		<main
-			onClick={() => {
-				navCtx.closeCart();
-			}}
-		>
-			<MobileCarousel />
-		</main>
+		<div className='container mx-auto'>
+			<main
+				onClick={() => {
+					navCtx.closeCart();
+				}}
+			>
+				<MobileCarousel />
+			</main>
+		</div>
 	);
 };
 

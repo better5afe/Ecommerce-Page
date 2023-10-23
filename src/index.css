@@ -41,6 +41,14 @@ a {
 	stroke: hsl(26, 100%, 55%);
 }
 
+.second-slide {
+	transform: translateX(-100%);
+}
+
+.third-slide {
+	transform: translateX(-200%);
+}
+
 .button {
 	transition: box-shadow 0.3s;
 }
