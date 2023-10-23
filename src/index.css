@@ -62,6 +62,10 @@ a {
 	transform: translateX(-200%);
 }
 
+.fourth-slide {
+	transform: translateX(-300%);
+}
+
 .button {
 	transition: box-shadow 0.3s;
 }

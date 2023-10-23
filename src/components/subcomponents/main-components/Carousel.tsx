@@ -41,6 +41,8 @@ const Carousel: React.FC<CarouselProps> = ({ className }) => {
 					className={`
 					${currentSlide === 2 && 'second-slide'} ${
 						currentSlide === 3 && 'third-slide'
+					} ${
+						currentSlide === 4 && 'fourth-slide'
 					} grow shrink-0 basis-full object-cover transition-transform duration-300`}
 				/>
 			))}

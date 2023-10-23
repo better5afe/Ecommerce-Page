@@ -9,10 +9,10 @@ const carouselSlice = createSlice({
 	initialState,
 	reducers: {
 		nextSlide: (state) => {
-			state.slide >= 3 ? (state.slide = 1) : state.slide++;
+			state.slide >= 4 ? (state.slide = 1) : state.slide++;
 		},
 		previousSlide: (state) => {
-			state.slide === 1 ? (state.slide = 3) : state.slide--;
+			state.slide === 1 ? (state.slide = 4) : state.slide--;
 		},
 	},
 });
