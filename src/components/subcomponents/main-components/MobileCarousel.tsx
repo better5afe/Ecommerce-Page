@@ -1,33 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useAppSelector } from '../../../store/typed-hooks';
+import { useDispatch } from 'react-redux';
+import { previousSlide, nextSlide } from '../../../store/carousel-slice';
 import { slides } from '../../../utils/slides';
 import CarouselBtn from '../../reusable/CarouselBtn';
 
 const MobileCarousel = () => {
-	const [currentSlide, setCurrentSlide] = useState(1);
+	const currentSlide = useAppSelector((state) => state.carousel.slide);
 
-	const nextSlide = () => {
-		if (currentSlide >= 3) {
-			setCurrentSlide(1);
-		} else {
-			setCurrentSlide((prevState) => {
-				return prevState + 1;
-			});
-		}
+	const dispatch = useDispatch();
+
+	const nextSlideHandler = () => {
+		dispatch(nextSlide());
 	};
 
-	const prevSlide = () => {
-		if (currentSlide === 1) {
-			setCurrentSlide(3);
-		} else {
-			setCurrentSlide((prevState) => {
-				return prevState - 1;
-			});
-		}
+	const prevSlideHandler = () => {
+		dispatch(previousSlide());
 	};
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			nextSlide();
+			dispatch(nextSlide);
 		}, 3000);
 
 		return () => {
@@ -47,8 +40,8 @@ const MobileCarousel = () => {
 					} ${currentSlide === 3 && 'third-slide'}`}
 				/>
 			))}
-			<CarouselBtn id='prev' className='left-4' onClick={prevSlide} />
-			<CarouselBtn id='next' className='right-4' onClick={nextSlide} />
+			<CarouselBtn id='prev' className='left-4' onClick={prevSlideHandler} />
+			<CarouselBtn id='next' className='right-4' onClick={nextSlideHandler} />
 		</div>
 	);
 };
