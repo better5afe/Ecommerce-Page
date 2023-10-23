@@ -4,7 +4,7 @@ import ProductControls from './product/ProductControls';
 const MainDescription = () => {
 	return (
 		<div className='m-4'>
-			<p className='mb-4 text-xs text-orange font-bold uppercase tracking-wider'>
+			<p className='mb-4 text-xs text-orange font-bold uppercase tracking-widest'>
 				{product.producent}
 			</p>
 			<h2 className='mb-4 text-2xl font-bold leading-none'>

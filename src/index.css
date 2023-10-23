@@ -41,6 +41,15 @@ a {
 	stroke: hsl(26, 100%, 55%);
 }
 
+.amount-btn svg use {
+	transition: fill 0.3s;
+}
+
+.amount-btn:hover svg use,
+.amount-btn:focus svg use {
+	fill: hsl(26, 93%, 63%);
+}
+
 .product-btn path {
 	fill: white;
 }

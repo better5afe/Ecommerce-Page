@@ -37,6 +37,11 @@ export interface CarouselBtnProps {
 	onClick: () => void;
 }
 
+export interface AmountBtnProps {
+	id: string;
+	onClick: () => void;
+}
+
 // Nav
 
 export interface NavLinkProps {
