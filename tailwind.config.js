@@ -4,11 +4,12 @@ module.exports = {
 	theme: {
 		screens: {
 			sm: '375px',
+			s: '576px',
 			md: '768px',
 			lg: '992px',
 			xl: '1200px',
 		},
-    extend: {
+		extend: {
 			colors: {
 				orange: 'hsl(26, 100%, 55%)',
 				paleOrange: 'hsl(25, 100%, 94%)',

@@ -3,17 +3,17 @@ import ProductControls from './product/ProductControls';
 
 const MainDescription = () => {
 	return (
-		<div className='m-4'>
-			<p className='mb-4 text-xs text-orange font-bold uppercase tracking-widest'>
+		<div className='w-full p-4'>
+			<p className='mb-4 text-xs text-orange font-bold uppercase tracking-widest md:mt-8 md:mb-6'>
 				{product.producent}
 			</p>
-			<h2 className='mb-4 text-2xl font-bold leading-none'>
+			<h2 className='mb-4 text-2xl font-bold leading-none md:text-3xl'>
 				{product.productName}
 			</h2>
-			<p className='mb-4 text-[13px] text-darkGrayishBlue'>
+			<p className='mb-4 text-[13px] text-darkGrayishBlue md:mb-8'>
 				{product.productInfo}
 			</p>
-			<div className='flex items-center justify-between mb-4 font-bold'>
+			<div className='flex items-center justify-between mb-4 font-bold md:mb-8'>
 				<div className='flex items-center'>
 					<p className='text-2xl'>${product.productPrice.toFixed(2)}</p>
 					{product.isDiscounted && (
