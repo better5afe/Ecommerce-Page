@@ -29,13 +29,13 @@ const MobileCarousel = () => {
 	}, []);
 
 	return (
-		<div className='relative flex w-screen h-auto overflow-x-hidden'>
+		<div className='relative flex w-screen h-[50vh] overflow-x-hidden'>
 			{slides.map((slide, index) => (
 				<img
 					src={slide.src}
 					alt={slide.alt}
 					key={index}
-					className={`grow shrink-0 basis-full transition-transform duration-300 ${
+					className={`grow shrink-0 basis-full object-cover transition-transform duration-300 ${
 						currentSlide === 2 && 'second-slide'
 					} ${currentSlide === 3 && 'third-slide'}`}
 				/>
