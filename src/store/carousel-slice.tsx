@@ -14,8 +14,11 @@ const carouselSlice = createSlice({
 		previousSlide: (state) => {
 			state.slide === 1 ? (state.slide = 4) : state.slide--;
 		},
+		selectSlide: (state, action) => {
+			state.slide = action.payload;
+		},
 	},
 });
 
-export const { nextSlide, previousSlide } = carouselSlice.actions;
+export const { nextSlide, previousSlide, selectSlide } = carouselSlice.actions;
 export default carouselSlice.reducer;

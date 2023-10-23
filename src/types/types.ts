@@ -65,3 +65,9 @@ export interface CartListItemProps {
 export interface CarouselProps {
 	className: string;
 }
+
+// Product
+
+export interface CurrentSlide {
+	currentSlide: number;
+}

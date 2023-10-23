@@ -8,8 +8,9 @@ const Main = () => {
 	const navCtx = useContext(NavContext);
 
 	return (
-		<div className='container w-screen lg:w-[992px] lg:mx-auto'>
+		<div className='container w-screen lg:w-[930px] lg:mx-auto lg:my-16'>
 			<main
+				className='lg:flex items-center justify-between'
 				onClick={() => {
 					navCtx.closeCart();
 				}}

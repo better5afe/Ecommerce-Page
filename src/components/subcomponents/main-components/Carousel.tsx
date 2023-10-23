@@ -21,7 +21,7 @@ const Carousel: React.FC<CarouselProps> = ({ className }) => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			dispatch(nextSlide);
+			dispatch(nextSlide());
 		}, 3000);
 
 		return () => {
