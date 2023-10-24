@@ -9,6 +9,10 @@ const CartBtn = () => {
 
 	const navCtx = useContext(NavContext);
 
+	let totalItemsAmount = cartState.cartItems.reduce((total, cartItem) => {
+		return total + cartItem.amount;
+	}, 0);
+
 	return (
 		<button
 			id='cart-btn'
@@ -16,7 +20,9 @@ const CartBtn = () => {
 			className='cart-btn relative'
 		>
 			<IconCart className='pointer-events-none' />
-			{cartState.cartItems.length > 0 && <CartBadge />}
+			{cartState.cartItems.length > 0 && (
+				<CartBadge amount={totalItemsAmount} />
+			)}
 		</button>
 	);
 };

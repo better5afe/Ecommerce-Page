@@ -14,13 +14,6 @@ const Nav = () => {
 	return (
 		<div
 			className='container sticky top-0 mx-auto bg-white z-30 lg:static'
-			onClick={(e) => {
-				if ((e.target as HTMLElement).id === 'cart-btn') {
-					return;
-				} else {
-					navCtx.closeCart();
-				}
-			}}
 		>
 			<nav className='relative flex items-center justify-between p-4 lg:py-6 lg:border-b'>
 				<div className='flex items-end'>

@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { removeFromCart } from '../../../../store/cart-slice';
 import { CartListItemProps } from '../../../../types/types';
 import IconTrash from '../../../../assets/icons/IconTrash';
 
@@ -8,7 +10,13 @@ const CartListItem: React.FC<CartListItemProps> = ({
 	price,
 	amount,
 }) => {
+	const dispatch = useDispatch();
+
 	let totalAmount = (price * amount).toFixed(2);
+
+	const removeFromCartHandler = () => {
+		dispatch(removeFromCart(id));
+	};
 
 	return (
 		<li className='flex items-center justify-between mb-6 text-sm'>
@@ -28,7 +36,10 @@ const CartListItem: React.FC<CartListItemProps> = ({
 					</div>
 				</div>
 			</div>
-			<button className='delete-btn outline-none'>
+			<button
+				className='delete-btn outline-none'
+				onClick={removeFromCartHandler}
+			>
 				<IconTrash />
 			</button>
 		</li>

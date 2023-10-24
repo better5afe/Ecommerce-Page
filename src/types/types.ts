@@ -69,6 +69,10 @@ export interface NavLinkProps {
 	text: string;
 }
 
+export interface CartBadgeProps {
+	amount: number
+}
+
 // Cart
 
 export interface CartListItemProps {
