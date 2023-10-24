@@ -19,16 +19,8 @@ const MainModal: React.FC<CurrentSlide> = ({ currentSlide }) => {
 	};
 
 	return (
-		<div
-			className='hidden lg:block'
-			onClick={closeModalHandler}
-		>
-			<Backdrop
-				className='z-40'
-				onClick={() => {
-					console.log('test');
-				}}
-			/>
+		<div className='hidden lg:block'>
+			<Backdrop className='z-40'/>
 			<div className='fixed inset-0 flex flex-col justify-center items-center z-50'>
 				<div className='relative'>
 					<button

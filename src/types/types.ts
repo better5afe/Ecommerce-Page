@@ -42,14 +42,14 @@ export interface IconProps {
 
 export interface BackdropProps {
 	className: string;
-	onClick: () => void;
+	onClick?: () => void;
 }
 
 export interface ButtonProps {
 	id?: string;
 	text: string | any;
 	className?: string;
-	onClick: () => void;
+	onClick?: () => void;
 }
 
 export interface CarouselBtnProps {

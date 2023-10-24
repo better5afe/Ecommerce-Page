@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import { useAppSelector } from '../../../../store/typed-hooks';
-import { NavContext } from '../../../../context/nav-context';
 import CartListItem from './CartListItem';
 import Button from '../../../reusable/Button';
 
@@ -18,8 +16,6 @@ const dummyItems = [
 
 const CartList = () => {
 	const cartItems = useAppSelector((state) => state.cart.cartItems);
-
-	const navCtx = useContext(NavContext);
 
 	return (
 		<ul
@@ -50,9 +46,6 @@ const CartList = () => {
 						/>
 					))}
 					<Button
-						onClick={() => {
-							navCtx.closeCart();
-						}}
 						className='w-full'
 						text='Checkout'
 					/>

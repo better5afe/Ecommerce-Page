@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAppSelector } from '../../../store/typed-hooks';
 import { useDispatch } from 'react-redux';
+import { useSwipeable } from 'react-swipeable';
 import { previousSlide, nextSlide } from '../../../store/carousel-slice';
 import { CarouselProps } from 'react-bootstrap';
 import { slides } from '../../../utils/slides';
@@ -19,6 +20,11 @@ const Carousel: React.FC<CarouselProps> = ({ className }) => {
 		dispatch(previousSlide());
 	};
 
+	const swipeHandlers = useSwipeable({
+		onSwipedRight: () => prevSlideHandler(),
+		onSwipedLeft: () => nextSlideHandler(),
+	});
+
 	useEffect(() => {
 		const interval = setInterval(() => {
 			dispatch(nextSlide());
@@ -32,6 +38,7 @@ const Carousel: React.FC<CarouselProps> = ({ className }) => {
 	return (
 		<div
 			className={`${className} relative flex w-screen h-[50vh] overflow-x-hidden lg:w-[450px] lg:h-[450px] lg:mb-8 lg:rounded-xl`}
+			{...swipeHandlers}
 		>
 			{slides.map((slide, index) => (
 				<img
