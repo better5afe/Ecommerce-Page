@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import { useDispatch } from 'react-redux';
+import { ModalContext } from '../../../context/modal-context';
 import { previousSlide, nextSlide } from '../../../store/carousel-slice';
 import { CurrentSlide } from '../../../types/types';
 import Backdrop from '../../reusable/Backdrop';
@@ -8,14 +10,16 @@ import CarouselBtn from '../../reusable/CarouselBtn';
 import IconClose from '../../../assets/icons/IconClose';
 
 const MainModal: React.FC<CurrentSlide> = ({ currentSlide }) => {
+	const modalCtx = useContext(ModalContext);
+
 	const dispatch = useDispatch();
 
 	const closeModalHandler = () => {
-		console.log('close modal');
+		modalCtx.closeModal();
 	};
 
 	return (
-		<div className='hidden lg:block'>
+		<div className='hidden lg:block' onClick={closeModalHandler}>
 			<Backdrop
 				className='z-40'
 				onClick={() => {
@@ -27,6 +31,11 @@ const MainModal: React.FC<CurrentSlide> = ({ currentSlide }) => {
 					<button
 						className='modal-btn absolute -top-6 right-0 outline-none'
 						onClick={closeModalHandler}
+						onKeyDown={(e) => {
+							if (e.key === 'Enter') {
+								closeModalHandler();
+							}
+						}}
 					>
 						<IconClose />
 					</button>

@@ -9,6 +9,13 @@ export interface NavContextProps {
 	closeCart: () => void;
 }
 
+export interface ModalContextProps {
+	isOpen: boolean;
+	openModal: () => void;
+	closeModal: () => void;
+	
+}
+
 export interface ProviderProps {
 	children: React.ReactNode;
 }
