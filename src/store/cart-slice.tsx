@@ -35,6 +35,7 @@ const cartSlice = createSlice({
 
 			if (state.cartItems.length === 0) {
 				state.cartItems = [addedProduct];
+				state.amount = 0;
 				localStorage.setItem('cart', JSON.stringify([addedProduct]));
 				return;
 			}
@@ -53,10 +54,12 @@ const cartSlice = createSlice({
 				};
 
 				state.cartItems[foundItemIndex] = updatedItem;
+				state.amount = 0;
 				localStorage.setItem('cart', JSON.stringify(state.cartItems));
 			} else {
 				const updatedArray = [...state.cartItems, addedProduct];
 				state.cartItems = updatedArray;
+				state.amount = 0;
 				localStorage.setItem('cart', JSON.stringify(updatedArray));
 			}
 		},
