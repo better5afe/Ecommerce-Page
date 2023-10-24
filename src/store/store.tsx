@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import carouselReducer from './carousel-slice';
+import cartReducer from './cart-slice';
 
 export const store = configureStore({
 	reducer: {
 		carousel: carouselReducer,
+		cart: cartReducer,
 	},
 });
 
