@@ -1,5 +1,3 @@
-// Context
-
 export interface NavContextProps {
 	isNavOpen: boolean;
 	openNav: () => void;
@@ -19,8 +17,6 @@ export interface ProviderProps {
 	children: React.ReactNode;
 }
 
-// cart slice
-
 export interface CartItem {
 	id: number;
 	name: string;
@@ -33,8 +29,6 @@ export interface CartStateSlice {
 	cartItems: CartItem[];
 	amount: number;
 }
-
-// General Components
 
 export interface IconProps {
 	className: string;
@@ -63,8 +57,6 @@ export interface AmountBtnProps {
 	onClick: () => void;
 }
 
-// Nav
-
 export interface NavLinkProps {
 	text: string;
 }
@@ -72,8 +64,6 @@ export interface NavLinkProps {
 export interface CartBadgeProps {
 	amount: number
 }
-
-// Cart
 
 export interface CartListItemProps {
 	id: number;
@@ -83,15 +73,9 @@ export interface CartListItemProps {
 	amount: number;
 }
 
-// Main
-
-// Carousel
-
 export interface CarouselProps {
 	className: string;
 }
-
-// Product
 
 export interface CurrentSlide {
 	currentSlide: number;
