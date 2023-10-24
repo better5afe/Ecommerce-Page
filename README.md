@@ -13,7 +13,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 - [Screenshots](#screenshot)
 - [Built with](#built-with)
 
-
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
@@ -42,10 +41,23 @@ In addition to this:
 
 Mobile view - with cart:
 
-![](./screenshot.jpg)
+![](./screenshots/Mobile--cart-open.png)
 
 Mobile view - without cart:
 
+![](./screenshots/Mobile--cart-closed.png)
+
+Desktop view - with cart:
+
+![](./screenshots/Desktop--cart-open.png)
+
+Desktop view - without cart:
+
+![](./screenshots/Desktop--cart-closed.png)
+
+Desktop - carousel modal gallery:
+
+![](./screenshots/Desktop--modal.png)
 
 ## Built with
 
