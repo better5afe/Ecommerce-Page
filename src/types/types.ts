@@ -13,11 +13,25 @@ export interface ModalContextProps {
 	isOpen: boolean;
 	openModal: () => void;
 	closeModal: () => void;
-	
 }
 
 export interface ProviderProps {
 	children: React.ReactNode;
+}
+
+// cart slice
+
+export interface CartItem {
+	id: number;
+	name: string;
+	thumbnail: any;
+	price: number;
+	amount: number;
+}
+
+export interface CartStateSlice {
+	cartItems: CartItem[];
+	amount: number;
 }
 
 // General Components

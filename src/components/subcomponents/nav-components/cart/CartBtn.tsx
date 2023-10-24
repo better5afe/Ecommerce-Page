@@ -1,9 +1,12 @@
 import { useContext } from 'react';
+import { useAppSelector } from '../../../../store/typed-hooks';
 import { NavContext } from '../../../../context/nav-context';
 import IconCart from '../../../../assets/icons/IconCart';
 import CartBadge from './CartBadge';
 
 const CartBtn = () => {
+	const cartState = useAppSelector((state) => state.cart);
+
 	const navCtx = useContext(NavContext);
 
 	return (
@@ -13,7 +16,7 @@ const CartBtn = () => {
 			className='cart-btn relative'
 		>
 			<IconCart className='pointer-events-none' />
-			<CartBadge />
+			{cartState.cartItems.length > 0 && <CartBadge />}
 		</button>
 	);
 };

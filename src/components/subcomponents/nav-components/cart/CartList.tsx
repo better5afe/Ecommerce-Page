@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useAppSelector } from '../../../../store/typed-hooks';
 import { NavContext } from '../../../../context/nav-context';
 import CartListItem from './CartListItem';
 import Button from '../../../reusable/Button';
@@ -16,6 +17,8 @@ const dummyItems = [
 ];
 
 const CartList = () => {
+	const cartItems = useAppSelector((state) => state.cart.cartItems);
+
 	const navCtx = useContext(NavContext);
 
 	return (
@@ -30,20 +33,20 @@ const CartList = () => {
 			>
 				Cart
 			</p>
-			{dummyItems.length === 0 ? (
+			{cartItems.length === 0 ? (
 				<p className='py-14 text-sm text-darkGrayishBlue font-bold text-center'>
 					Your cart is empty
 				</p>
 			) : (
 				<div className='m-4 mb-6'>
-					{dummyItems.map((dummyItem, index) => (
+					{cartItems.map((cartItem, index) => (
 						<CartListItem
 							key={index}
-							id={dummyItem.id}
-							name={dummyItem.name}
-							thumbnail={dummyItem.thumbnail}
-							price={dummyItem.price}
-							amount={dummyItem.amount}
+							id={cartItem.id}
+							name={cartItem.name}
+							thumbnail={cartItem.thumbnail}
+							price={cartItem.price}
+							amount={cartItem.amount}
 						/>
 					))}
 					<Button
