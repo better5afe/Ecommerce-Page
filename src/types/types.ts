@@ -71,3 +71,8 @@ export interface CarouselProps {
 export interface CurrentSlide {
 	currentSlide: number;
 }
+
+export interface CarouselThumbnails extends CurrentSlide {
+	className?: string;
+	borderColor?: string;
+}

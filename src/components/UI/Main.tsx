@@ -1,10 +1,14 @@
 import { useContext } from 'react';
+import { useAppSelector } from '../../store/typed-hooks';
 import { NavContext } from '../../context/nav-context';
 import Carousel from '../subcomponents/main-components/Carousel';
 import MainProduct from '../subcomponents/main-components/MainProduct';
 import MainDescription from '../subcomponents/main-components/MainDescription';
+import MainModal from '../subcomponents/main-components/MainModal';
 
 const Main = () => {
+	const stateSlide = useAppSelector((state) => state.carousel.slide);
+
 	const navCtx = useContext(NavContext);
 
 	return (
@@ -16,8 +20,9 @@ const Main = () => {
 				}}
 			>
 				<Carousel className='mobile-carousel' />
-				<MainProduct />
+				<MainProduct currentSlide={stateSlide} />
 				<MainDescription />
+				<MainModal currentSlide={stateSlide} />
 			</main>
 		</div>
 	);

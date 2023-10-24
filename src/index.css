@@ -7,6 +7,7 @@ button,
 input {
 	font-family: 'Kumbh Sans', sans-serif;
 	font-size: 16px;
+	-webkit-tap-highlight-color: transparent;
 }
 
 button,
@@ -17,7 +18,8 @@ a {
 .open-nav svg path,
 .close-nav svg path,
 .cart-btn svg path,
-.delete-btn svg path {
+.delete-btn svg path,
+.modal-btn svg path {
 	transition: fill 0.3s;
 }
 
@@ -50,7 +52,9 @@ a {
 	fill: hsl(26, 83%, 76%);
 }
 
-.product-btn path {
+.product-btn path,
+.modal-btn:hover svg path,
+.modal-btn:focus svg path {
 	fill: white;
 }
 

@@ -31,7 +31,7 @@ const Carousel: React.FC<CarouselProps> = ({ className }) => {
 
 	return (
 		<div
-			className={`${className} relative flex w-screen h-[50vh] overflow-x-hidden`}
+			className={`${className} relative flex w-screen h-[50vh] overflow-x-hidden lg:w-[450px] lg:h-[450px] lg:mb-8 lg:rounded-xl`}
 		>
 			{slides.map((slide, index) => (
 				<img
@@ -43,11 +43,19 @@ const Carousel: React.FC<CarouselProps> = ({ className }) => {
 						currentSlide === 3 && 'third-slide'
 					} ${
 						currentSlide === 4 && 'fourth-slide'
-					} grow shrink-0 basis-full object-cover transition-transform duration-300`}
+					} grow shrink-0 basis-full object-cover object-right-bottom	 transition-transform duration-300`}
 				/>
 			))}
-			<CarouselBtn id='prev' className='left-4' onClick={prevSlideHandler} />
-			<CarouselBtn id='next' className='right-4' onClick={nextSlideHandler} />
+			<CarouselBtn
+				id='prev'
+				className='left-4 lg:hidden'
+				onClick={prevSlideHandler}
+			/>
+			<CarouselBtn
+				id='next'
+				className='right-4 lg:hidden'
+				onClick={nextSlideHandler}
+			/>
 		</div>
 	);
 };
