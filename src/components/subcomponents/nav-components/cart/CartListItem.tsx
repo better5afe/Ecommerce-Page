@@ -12,7 +12,9 @@ const CartListItem: React.FC<CartListItemProps> = ({
 }) => {
 	const dispatch = useDispatch();
 
-	let totalAmount = (price * amount).toFixed(2);
+	let totalAmount = (price * amount)
+		.toFixed(2)
+		.replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
 	const removeFromCartHandler = () => {
 		dispatch(removeFromCart(id));
