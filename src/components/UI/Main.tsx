@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import { useContext } from 'react';
 import { useAppSelector } from '../../store/typed-hooks';
 import { NavContext } from '../../context/nav-context';
@@ -22,7 +23,10 @@ const Main = () => {
 				<Carousel className='mobile-carousel' />
 				<MainProduct currentSlide={stateSlide} />
 				<MainDescription />
-				<MainModal currentSlide={stateSlide} />
+				{ReactDOM.createPortal(
+					<MainModal currentSlide={stateSlide} />,
+					document.getElementById('modal')!
+				)}
 			</main>
 		</div>
 	);
